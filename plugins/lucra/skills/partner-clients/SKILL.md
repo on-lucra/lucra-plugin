@@ -7,16 +7,16 @@ description: Works across an agency's or partner's client brands in Lucra (lists
 
 ## Clients
 
-- The partner's clients: `brands_list` (each brand with its `acct_…` ID; brands whose relationship ended are marked).
-- The book at a glance: `tally` with `list "brands_list"` and `fields ["status"]`, then `chart` type `donut`.
+- The partner's clients: `brands_find` (each brand with its `acct_…` ID; brands whose relationship ended are marked).
+- The book at a glance: `tally` with `list "brands_find"` and `fields ["status"]`, then `chart` type `donut`.
 
 ## Act inside a client
 
 Pass the client's `acct_…` ID as `account` on any tool call. Everything then runs in that brand's workspace with the partner's access there.
 
 Examples:
-- "What's waiting for Acme?" → the review-creator-work lists with `account: "acct_…"` (Acme's ID from `brands_list`).
-- "Spend by client this month" → for each active client, `tally` with `list "analytics_retrieve"` and that `account`, then one `chart` type `bar` comparing them.
+- "What's waiting for Acme?" → the review-creator-work lists with `account: "acct_…"` (Acme's ID from `brands_find`).
+- "Spend by client this month" → for each active client, `tally` with `list "ad_results"` and that `account`, then one `chart` type `bar` comparing them.
 
 ## Rules
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lucra",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Run Lucra from ChatGPT: creator programs, applications, videos, creator ads on Meta, TikTok, Google and Snapchat, results by creator, and creator payouts.",
   "author": {
     "name": "Lucra",
@@ -46,31 +46,31 @@
             {
               "description": "Finds everything waiting on the brand.",
               "prompt": "What needs my attention in Lucra?",
-              "tools_triggered": "applications_list, submissions_list, campaigns_list",
-              "expected_behavior": "Calls applications_list and submissions_list with status pending and campaigns_list with status needs_attention, shows them as cards and says what to do first, or says nothing is waiting."
+              "tools_triggered": "applications_find, submissions_find, campaigns_find",
+              "expected_behavior": "Calls applications_find and submissions_find with status pending and campaigns_find with status needs_attention, shows them as cards and says what to do first, or says nothing is waiting."
             },
             {
               "description": "Lists the brand's creator programs with their status.",
               "prompt": "List my creator programs and say which are live.",
-              "tools_triggered": "programs_list",
-              "expected_behavior": "Calls programs_list, shows the programs as cards and names which are open."
+              "tools_triggered": "programs_find",
+              "expected_behavior": "Calls programs_find, shows the programs as cards and names which are open."
             },
             {
               "description": "Ranks creators by attributed sales.",
               "prompt": "Who are my top 5 creators by sales in the last 30 days?",
               "tools_triggered": "tally",
-              "expected_behavior": "Calls tally on analytics_retrieve grouped by creator, summing revenue, and answers with the five creators and their sales."
+              "expected_behavior": "Calls tally on ad_results grouped by creator, summing revenue, and answers with the five creators and their sales."
             },
             {
               "description": "Charts ad results over time.",
               "prompt": "Chart my creator ad spend and sales by day for the last 14 days.",
               "tools_triggered": "tally, chart",
-              "expected_behavior": "Counts daily spend and sales with tally on analytics_retrieve, then calls chart with those numbers and summarizes the trend in a sentence."
+              "expected_behavior": "Counts daily spend and sales with tally on ad_results, then calls chart with those numbers and summarizes the trend in a sentence."
             },
             {
               "description": "Pauses a campaign after confirming.",
               "prompt": "Pause my lowest-performing TikTok campaign.",
-              "tools_triggered": "campaigns_list, campaigns_update",
+              "tools_triggered": "campaigns_find, campaigns_update",
               "expected_behavior": "Reads campaigns and their results, names the campaign it will pause and asks to confirm, then calls campaigns_update with status paused after the user agrees."
             }
           ],
@@ -95,7 +95,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "One tool per Lucra API operation (programs, applications, videos, campaigns, results, payments and more), each with its own inputs and safety hints, plus tally, chart and docs; results show as Lucra cards and charts; six skills."
+        "release_notes": "Fewer, clearer tools: a find tool per kind of record (list, or get one by ID), one tool per change, ad_results for performance, plus tally, chart and docs; results show as Lucra cards and charts; creators can connect their own profile; seven skills."
       }
     }
   }

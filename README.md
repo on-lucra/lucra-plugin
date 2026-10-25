@@ -16,7 +16,7 @@ plugins/lucra/
 .agents/plugins/marketplace.json Codex marketplace for this repo
 ```
 
-**MCP server:** `https://api.onlucra.com/api/mcp` (streamable HTTP, OAuth 2.1 with dynamic client registration). It has one tool per Lucra API operation, named `<resource>_<action>` (`programs_list`, `submissions_update`, `payments_create`…), each with its own inputs and safety hints, plus:
+**MCP server:** `https://api.onlucra.com/api/mcp` (streamable HTTP, OAuth 2.1 with dynamic client registration). Each kind of record has a find tool (`programs_find`, `submissions_find`…: pass `id` for one, or filters to list), each change is its own tool (`programs_create`, `campaigns_update`, `payments_create`…), and `ad_results` reads performance, plus:
 
 | Tool | What it does |
 | --- | --- |

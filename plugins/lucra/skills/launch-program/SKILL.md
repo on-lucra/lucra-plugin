@@ -20,7 +20,7 @@ Leave optional settings (limits, schedules, agreements, files) out unless the us
 
 ## Invite creators
 
-- Find creators in their roster: `creators_list` with `query {"q": "<name or handle>"}`.
+- Find creators in their roster: `creators_find` with `query {"q": "<name or handle>"}`.
 - Invite one: `applications_create` with `body {"program": "prog_…", "creator": "crtr_…"}`.
 
 ## Brief tips
