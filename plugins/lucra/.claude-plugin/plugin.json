@@ -4,7 +4,7 @@
   "description": "Run creator marketing from Claude: creator programs, applications, videos, creator ads on Meta, TikTok, Google and Snapchat, results by creator and creator payouts, with Lucra's cards and charts.",
   "author": { "name": "Lucra", "url": "https://www.onlucra.com" },
   "homepage": "https://www.onlucra.com/docs/mcp",
-  "repository": "https://github.com/will4381/lucra-plugin",
+  "repository": "https://github.com/on-lucra/lucra-plugin",
   "license": "MIT",
   "keywords": ["creators", "ugc", "creator ads", "influencer marketing", "affiliate", "payouts"]
 }

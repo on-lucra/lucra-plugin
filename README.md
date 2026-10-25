@@ -32,8 +32,8 @@ plugins/lucra/
 
 ## Install
 
-- **Claude Code:** `/plugin marketplace add will4381/lucra-plugin`, then `/plugin install lucra@lucra`.
-- **Codex:** `codex plugin marketplace add will4381/lucra-plugin`, then install Lucra from the Plugins Directory.
+- **Claude Code:** `/plugin marketplace add on-lucra/lucra-plugin`, then `/plugin install lucra@lucra`.
+- **Codex:** `codex plugin marketplace add on-lucra/lucra-plugin`, then install Lucra from the Plugins Directory.
 - **Claude.ai and ChatGPT:** add Lucra from the connector or plugin directory.
 
 On first use, sign in to Lucra and pick the brand or partner workspace to connect. Choose read-only if you only want answers.
