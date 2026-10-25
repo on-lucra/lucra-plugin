@@ -17,6 +17,7 @@ Lucra runs creator marketing for brands: programs creators apply to, the videos 
 
 There is one tool per Lucra operation, named `<resource>_<action>`: `programs_list`, `programs_retrieve`, `programs_create`, `programs_update`, `submissions_list`, `payments_create` and so on. Each tool's inputs are its path IDs (like `id`), `query` (filters on lists), `body` (on creates and updates) and `account`.
 
+- **Find the tool.** Some clients load only part of Lucra's tools at first. If the one you need (like `programs_list`) isn't loaded, search your tools for its name and load it before saying it's unavailable.
 - **Read before you answer.** Never guess data: call the list or retrieve tool first. For counts, totals, rankings and trends use `tally` on a list tool.
 - **Show records, don't list them in text.** Results show as Lucra's cards where the host shows UI. Say what they mean in a sentence; don't repeat every field.
 - **Changes:** most updates need the record's current `version` from a fresh retrieve. On `version_conflict`, read again and retry once.
