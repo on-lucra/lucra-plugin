@@ -16,17 +16,15 @@ plugins/lucra/
 .agents/plugins/marketplace.json Codex marketplace for this repo
 ```
 
-**MCP server:** `https://api.onlucra.com/api/mcp` (streamable HTTP, OAuth 2.1 with dynamic client registration). Tools:
+**MCP server:** `https://api.onlucra.com/api/mcp` (streamable HTTP, OAuth 2.1 with dynamic client registration). It has one tool per Lucra API operation, named `<resource>_<action>` (`programs_list`, `submissions_update`, `payments_create`…), each with its own inputs and safety hints, plus:
 
 | Tool | What it does |
 | --- | --- |
-| `lucra_endpoints` | Lists Lucra's API paths, filtered by a few words |
-| `describe_endpoint` | The exact query and body an endpoint takes |
-| `read_lucra` | Reads any Lucra record or list, shown as Lucra cards |
-| `change_lucra` | Creates or updates a record (needs a read-and-write connection) |
-| `tally_lucra` | Counts, sums and ranks across every page of a list |
+| `tally` | Counts, sums and ranks across every page of a list tool |
 | `chart` | Draws a bar, line or donut chart from numbers already read |
 | `lucra_docs` | Searches and reads Lucra's help docs |
+
+A read-only connection gets only the read tools.
 
 **Skills:** `get-started`, `review-creator-work`, `ad-performance`, `launch-program`, `pay-creators`, `partner-clients`.
 

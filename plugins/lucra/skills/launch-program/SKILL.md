@@ -12,17 +12,16 @@ Work out everything you can from what the user said, default the rest, create it
 1. You need:
    - `type`: `organic` (creators post on their own accounts, paid per video or per 1,000 views) or `paid_ads` (the brand runs creators' videos as ads, paid a percent of ad spend).
    - `name`: pick a good one from their product or goal; they can rename it.
-   - `pay`: ask in the program's own terms if they didn't say it.
-2. `describe_endpoint` `POST /v1/programs` for the exact `pay` shape.
-3. `change_lucra` `POST /v1/programs` with `visibility: "invite"` (a draft nobody else sees), the `brief` (what to film, the key message, what to avoid), `platforms`, `type`, `name`, `pay`.
-4. The new program shows as a card. Offer to open it to the Lucra Network (`PATCH /v1/programs/:id` with `visibility: "network"` and the `version`) or tweak the brief.
+   - `pay`: ask in the program's own terms if they didn't say it. The `programs_create` input schema has its exact shape.
+2. `programs_create` with `body` holding `visibility: "invite"` (a draft nobody else sees), the `brief` (what to film, the key message, what to avoid), `platforms`, `type`, `name` and `pay`.
+3. The new program shows as a card. Offer to open it to the Lucra Network (`programs_update` with `body {"visibility": "network", "version": <version>}`) or tweak the brief.
 
 Leave optional settings (limits, schedules, agreements, files) out unless the user brings them up.
 
 ## Invite creators
 
-- A creator already in their roster: `change_lucra` `POST /v1/applications` body `{"program": "prog_…", "creator": "crtr_…"}`.
-- Find creators in their roster: `read_lucra` `/v1/creators` with `q` (a name or handle).
+- Find creators in their roster: `creators_list` with `query {"q": "<name or handle>"}`.
+- Invite one: `applications_create` with `body {"program": "prog_…", "creator": "crtr_…"}`.
 
 ## Brief tips
 
