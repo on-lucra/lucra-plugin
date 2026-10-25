@@ -1,0 +1,102 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "lucra",
+  "version": "1.1.0",
+  "description": "Run Lucra from ChatGPT: creator programs, applications, videos, creator ads on Meta, TikTok, Google and Snapchat, results by creator, and creator payouts.",
+  "author": {
+    "name": "Lucra",
+    "url": "https://www.onlucra.com"
+  },
+  "homepage": "https://www.onlucra.com",
+  "keywords": [
+    "creators",
+    "ugc",
+    "creator ads",
+    "influencer marketing",
+    "affiliate",
+    "payouts"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Lucra",
+        "shortDescription": "Creator programs and ads",
+        "longDescription": "Lucra is where brands run creator marketing end to end. Connect your Lucra account and ask in plain words; answers come back as Lucra's own cards and charts.\n\n- Needs you: creator applications, videos and sample requests waiting on you, and ads that need attention.\n- Programs: create a program from a short brief, invite creators, open it to the Lucra Network.\n- Videos: watch creators' submissions, approve them or ask for changes.\n- Creator ads: your campaigns on Meta, TikTok, Google and Snapchat; pause or resume them.\n- Results: spend, sales and return by creator, video or campaign from Lucra's own attribution, charted over time.\n- Payments: what you've paid creators, and bonuses or one-off payments after you confirm.\n\nWho it's for: brands, agencies and partners with a Lucra account. It acts as the member who connected it, with their role; connect read-only if you only want answers.\n\nLimits: anything that spends or moves money, launches ads, or ends, archives or removes something asks you to confirm first. Uploading videos and files happens in the Lucra app.",
+        "developerName": "Lucra",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://www.onlucra.com",
+        "supportURL": "https://www.onlucra.com/docs/mcp",
+        "privacyPolicyURL": "https://www.onlucra.com/privacy",
+        "termsOfServiceURL": "https://www.onlucra.com/terms",
+        "defaultPrompt": [
+          "What needs my attention in Lucra?",
+          "Chart my creator ad spend and sales for the last 30 days",
+          "Who are my top 5 creators by sales this month?"
+        ],
+        "brandColor": "#111111",
+        "brandColorDark": "#F5F5F5",
+        "logo": "./assets/logo.png",
+        "logoDark": "./assets/logo-dark.png"
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Finds everything waiting on the brand.",
+              "prompt": "What needs my attention in Lucra?",
+              "tools_triggered": "read_lucra",
+              "expected_behavior": "Calls read_lucra on pending applications, pending submissions and campaigns needing attention, shows them as cards and says what to do first, or says nothing is waiting."
+            },
+            {
+              "description": "Lists the brand's creator programs with their status.",
+              "prompt": "List my creator programs and say which are live.",
+              "tools_triggered": "read_lucra",
+              "expected_behavior": "Calls read_lucra on /v1/programs, shows the programs as cards and names which are open."
+            },
+            {
+              "description": "Ranks creators by attributed sales.",
+              "prompt": "Who are my top 5 creators by sales in the last 30 days?",
+              "tools_triggered": "tally_lucra",
+              "expected_behavior": "Calls tally_lucra on /v1/analytics grouped by creator, summing revenue, and answers with the five creators and their sales."
+            },
+            {
+              "description": "Charts ad results over time.",
+              "prompt": "Chart my creator ad spend and sales by day for the last 14 days.",
+              "tools_triggered": "read_lucra, chart",
+              "expected_behavior": "Reads daily analytics with read_lucra or tally_lucra, then calls chart with those numbers and summarizes the trend in a sentence."
+            },
+            {
+              "description": "Pauses a campaign after confirming.",
+              "prompt": "Pause my lowest-performing TikTok campaign.",
+              "tools_triggered": "read_lucra, change_lucra",
+              "expected_behavior": "Reads campaigns and their results, names the campaign it will pause and asks to confirm, then calls change_lucra PATCH with status paused after the user agrees."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Moving money to a personal account isn't something Lucra does; ChatGPT shouldn't call payment tools for it.",
+              "prompt": "Send $500 from my Lucra account to my personal Venmo."
+            },
+            {
+              "description": "A general writing request unrelated to the brand's Lucra data needs no Lucra tool.",
+              "prompt": "Write a short poem about summer."
+            },
+            {
+              "description": "Another company's private Lucra data isn't reachable; the connection only sees the account that authorized it.",
+              "prompt": "Show me Nike's creator programs and what they pay creators."
+            }
+          ]
+        },
+        "demo_recording_url": "REPLACE_WITH_DEMO_VIDEO_URL"
+      },
+      "publication": {
+        "countries": [
+          "US"
+        ],
+        "release_notes": "Rebuilt on Lucra's in-app assistant: seven focused tools (read, change, tally, chart, docs, endpoints, describe) over the whole Lucra API, Lucra cards and charts in the chat, and six skills."
+      }
+    }
+  }
+}

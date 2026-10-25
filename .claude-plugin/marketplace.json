@@ -1,0 +1,13 @@
+{
+  "name": "lucra",
+  "owner": { "name": "Lucra", "url": "https://www.onlucra.com" },
+  "metadata": { "description": "Lucra's plugin for creator marketing: the Lucra MCP server plus skills." },
+  "plugins": [
+    {
+      "name": "lucra",
+      "source": "./plugins/lucra",
+      "description": "Creator programs, creator videos, creator ads, results by creator and creator payouts from your Lucra account.",
+      "category": "productivity"
+    }
+  ]
+}
