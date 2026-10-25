@@ -26,7 +26,7 @@ plugins/lucra/
 
 A read-only connection gets only the read tools.
 
-**Skills:** `get-started`, `review-creator-work`, `ad-performance`, `launch-program`, `pay-creators`, `partner-clients`.
+**Skills:** `get-started`, `review-creator-work`, `ad-performance`, `launch-program`, `pay-creators`, `partner-clients`, and for creators connected as themselves, `creator-work`.
 
 ## Install
 

@@ -9,9 +9,9 @@ Lucra runs creator marketing for brands: programs creators apply to, the videos 
 
 ## Connect
 
-1. The user connects the Lucra connector and signs in with the account they use for their brand or agency.
-2. On Lucra's "Authorize" card they pick the workspace (brand or partner) and approve. Read and write lets you make changes; read-only answers questions only.
-3. Creators can't connect: the connector works for brand and partner workspaces.
+1. The user connects the Lucra connector and signs in with the account they use on Lucra. Someone new signs up and finishes setup first, then comes straight back to authorize.
+2. On Lucra's "Authorize" card they pick the workspace (brand or partner) or, as a creator, their creator profile, and approve. Read and write lets you make changes; read-only answers questions only.
+3. A creator's connection acts as that creator: see the creator-work skill.
 
 ## How to work with the Lucra tools
 
