@@ -1,6 +1,6 @@
 # Lucra plugin
 
-Run creator marketing from Claude, ChatGPT and Codex. The plugin connects your Lucra account through Lucra's MCP server and adds skills for the jobs brands and agencies do every day: reviewing creator work, reading ad results by creator, launching programs, paying creators and working across client brands. Answers come back as Lucra's own cards and charts where the host shows UI.
+Run creator marketing from Claude, ChatGPT and Codex. The plugin connects your Lucra account through Lucra's MCP server and adds skills for the jobs brands and agencies do every day: reviewing creator work, reading ad results by creator, launching programs, paying creators and working across client brands.
 
 ## What's inside
 
@@ -21,7 +21,6 @@ plugins/lucra/
 | Tool | What it does |
 | --- | --- |
 | `tally` | Counts, sums and ranks across every page of a list tool |
-| `chart` | Draws a bar, line or donut chart from numbers already read |
 | `lucra_docs` | Searches and reads Lucra's help docs |
 
 A read-only connection gets only the read tools.
@@ -38,7 +37,7 @@ On first use, sign in to Lucra and pick the brand or partner workspace to connec
 
 ## Data and permissions
 
-The plugin acts as the Lucra member who connected it, with their role, and only in the workspaces they can reach. Lucra's tools read and change data in that Lucra account; nothing else on your computer is read. Anything that spends or moves money, launches ads, or ends, archives or removes something asks you to confirm first. Credentials such as new API keys are shown to you in the card and are never sent to the model.
+The plugin acts as the Lucra member who connected it, with their role, and only in the workspaces they can reach. Lucra's tools read and change data in that Lucra account; nothing else on your computer is read. Anything that spends or moves money, launches ads, or ends, archives or removes something asks you to confirm first. Credentials such as new secrets are never sent to the model; you copy them in Lucra.
 
 Privacy policy: https://www.onlucra.com/privacy · Terms: https://www.onlucra.com/terms · Support: https://www.onlucra.com/docs/mcp
 

@@ -30,7 +30,7 @@ Read each and lead with what needs them:
 
 ## Results
 
-- How their videos did as ads: `ad_results` (their own results across brands); rank with `tally` on it, chart with `chart`.
+- How their videos did as ads: `ad_results` (their own results across brands); rank with `tally` on it, and show the trend as a short table or your own chart.
 
 ## Messages
 

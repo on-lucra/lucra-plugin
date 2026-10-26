@@ -14,7 +14,7 @@ Work out everything you can from what the user said, default the rest, create it
    - `name`: pick a good one from their product or goal; they can rename it.
    - `pay`: ask in the program's own terms if they didn't say it. The `programs_create` input schema has its exact shape.
 2. `programs_create` with `body` holding `visibility: "invite"` (a draft nobody else sees), the `brief` (what to film, the key message, what to avoid), `platforms`, `type`, `name` and `pay`.
-3. The new program shows as a card. Offer to open it to the Lucra Network (`programs_update` with `body {"visibility": "network", "version": <version>}`) or tweak the brief.
+3. Say it's created and link it (the result's `openInLucra`). Offer to open it to the Lucra Network (`programs_update` with `body {"visibility": "network", "version": <version>}`) or tweak the brief.
 
 Leave optional settings (limits, schedules, agreements, files) out unless the user brings them up.
 

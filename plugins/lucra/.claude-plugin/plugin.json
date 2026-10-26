@@ -1,7 +1,7 @@
 {
   "name": "lucra",
-  "version": "1.3.0",
-  "description": "Run creator marketing from Claude: creator programs, applications, videos, creator ads on Meta, TikTok, Google and Snapchat, results by creator and creator payouts, with Lucra's cards and charts.",
+  "version": "1.4.0",
+  "description": "Run creator marketing from Claude: creator programs, applications, videos, creator ads on Meta, TikTok, Google and Snapchat, results by creator and creator payouts.",
   "author": {
     "name": "Lucra",
     "url": "https://www.onlucra.com"
